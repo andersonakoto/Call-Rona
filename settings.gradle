@@ -1,0 +1,2 @@
+rootProject.name='Call Rona'
+include ':app'
