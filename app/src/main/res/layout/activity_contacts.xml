@@ -10,7 +10,7 @@
 
 
     <ImageView
-        android:id="@+id/contact_img"
+        android:id="@+id/view_contact"
         android:layout_width="71dp"
         android:layout_height="67dp"
         android:layout_marginStart="16dp"
@@ -31,23 +31,13 @@
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.375"
-        app:layout_constraintStart_toEndOf="@+id/contact_img"
+        app:layout_constraintStart_toEndOf="@+id/view_contact"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/wurfel_img"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:background="@drawable/wurfel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contact_list_view"
-        android:layout_width="300dp"
-        android:layout_height="290dp"
+        android:layout_width="273dp"
+        android:layout_height="275dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
@@ -55,24 +45,23 @@
         android:divider="@null"
         app:layout_constraintBottom_toTopOf="@+id/add_contact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.45" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="62dp"
+        android:layout_height="80dp"
         android:layout_marginStart="310dp"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="32dp"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/wurfel_img"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/ic_add_black_24dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -101,5 +90,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="60dp"
+        android:layout_height="54dp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/add_contact"
+        app:layout_constraintEnd_toEndOf="@+id/add_contact"
+        app:layout_constraintStart_toStartOf="@+id/add_contact"
+        app:layout_constraintTop_toTopOf="@+id/add_contact"
+        app:srcCompat="@mipmap/ic_add_black_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

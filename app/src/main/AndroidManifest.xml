@@ -41,7 +41,6 @@
                 android:value="com.pineappleapps.callrona.StatisticsActivity" />
         </activity>
 
-
     </application>
 
 </manifest>

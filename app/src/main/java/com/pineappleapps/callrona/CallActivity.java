@@ -9,6 +9,7 @@ import android.telecom.Call;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,10 +19,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.pineappleapps.callrona.database.AppDatabase;
 import com.pineappleapps.callrona.database.AppExecutors;
 
+import java.util.Date;
+
 public class CallActivity extends AppCompatActivity {
 
 
-    Button roll_button, statistics, contact_list;
+    Button roll_button;
+    ImageButton statistics, contact_list;
 
     ProgressBar rolling_progress;
     TextView rolling;
@@ -93,9 +97,13 @@ public class CallActivity extends AppCompatActivity {
 
                                                 String contact_name = cursor.getString(cursor.getColumnIndex("contact_name"));
                                                 String contact_phone = cursor.getString(cursor.getColumnIndex("phone_number"));
+                                                String number_of_calls = cursor.getString(cursor.getColumnIndex("number_of_calls"));
+                                                String date_called = cursor.getString(cursor.getColumnIndex("date_called"));
 
                                                 Log.e("Results", contact_name);
                                                 Log.e("Results", contact_phone);
+                                                Log.e("Results", number_of_calls);
+                                                Log.e("Results", date_called);
 
                                                 rolling_progress.setVisibility(View.INVISIBLE);
                                                 rolling.setVisibility(View.INVISIBLE);

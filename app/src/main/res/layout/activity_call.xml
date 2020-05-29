@@ -8,56 +8,58 @@
     tools:context=".CallActivity">
 
 
+    <ImageView
+        android:id="@+id/roulette_img"
+        android:layout_width="259dp"
+        android:layout_height="208dp"
+        android:layout_marginBottom="164dp"
+        android:src="@drawable/roullete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ProgressBar
         android:id="@+id/rolling_progress"
         android:layout_width="79dp"
         android:layout_height="62dp"
-        android:layout_marginTop="110dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/rolling_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
 
     <TextView
-        android:id="@+id/rolling_text"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="48dp"
-        android:text="Rolling..."
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/roulette_img"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="Contacts"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/rolling_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rolling_progress" />
+        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintStart_toEndOf="@+id/rolling_text" />
 
-    <ImageView
-        android:id="@+id/statistik_img"
-        android:layout_width="70dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="180dp"
-        android:src="@drawable/statistik_img"
-        app:layout_constraintBottom_toBottomOf="@+id/contact_img"
-        app:layout_constraintEnd_toStartOf="@+id/contact_img"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/contact_img"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/contact_img"
-        android:layout_width="71dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:src="@drawable/contact_img"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/statistik_img"
-        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="Statistik"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/rolling_text"
+        app:layout_constraintEnd_toStartOf="@+id/rolling_text"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/call_img"
@@ -65,85 +67,70 @@
         android:layout_height="125dp"
         android:background="@drawable/telephon"
         android:translationZ="90dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/roulette_img"
+        app:layout_constraintEnd_toEndOf="@+id/roulette_img"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/roulette_img"
+        app:layout_constraintTop_toTopOf="@+id/roulette_img"
+        app:layout_constraintVertical_bias="0.481" />
 
-    <ImageView
-        android:id="@+id/roulette_img"
-        android:layout_width="257dp"
-        android:layout_height="208dp"
-        android:src="@drawable/roullete"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/rolling_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Rolling..."
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/roulette_img"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
-
-    <ImageView
-        android:id="@+id/wurfel_img"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:background="@drawable/wurfel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/view_contact"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="71dp"
-        android:layout_height="67dp"
-        app:layout_constraintBottom_toBottomOf="@+id/contact_img"
-        app:layout_constraintEnd_toEndOf="@+id/contact_img"
-        app:layout_constraintStart_toStartOf="@+id/contact_img"
-        app:layout_constraintTop_toTopOf="@+id/contact_img" />
+        style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+        android:layout_width="65dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:cropToPadding="false"
+        android:scaleType="center"
+        android:src="@drawable/btn_contact_img"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/rolling_progress"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.973" />
 
-    <Button
+    <ImageButton
         android:id="@+id/view_statistics"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="70dp"
-        android:layout_height="62dp"
-        app:layout_constraintBottom_toBottomOf="@+id/statistik_img"
-        app:layout_constraintEnd_toEndOf="@+id/statistik_img"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/statistik_img"
-        app:layout_constraintTop_toTopOf="@+id/statistik_img"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_width="65dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/statistik_img"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/rolling_progress"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.973" />
 
     <Button
         android:id="@+id/roll_contacts"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/roulette_img"
-        app:layout_constraintEnd_toEndOf="@+id/roulette_img"
-        app:layout_constraintStart_toStartOf="@+id/roulette_img"
-        app:layout_constraintTop_toTopOf="@+id/roulette_img" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:text="Statistik"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statistik_img" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="197dp"
-        android:layout_marginEnd="30dp"
-        android:text="Contacts"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/statistik_img"
-        app:layout_constraintTop_toBottomOf="@+id/contact_img" />
+        android:layout_width="111dp"
+        android:layout_height="103dp"
+        app:layout_constraintBottom_toBottomOf="@+id/call_img"
+        app:layout_constraintEnd_toEndOf="@+id/call_img"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="@+id/call_img"
+        app:layout_constraintTop_toTopOf="@+id/call_img" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

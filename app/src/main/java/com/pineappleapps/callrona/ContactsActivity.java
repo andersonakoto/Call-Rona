@@ -24,6 +24,9 @@ import com.pineappleapps.callrona.model.Contact;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class ContactsActivity extends AppCompatActivity {
@@ -104,13 +107,21 @@ public class ContactsActivity extends AppCompatActivity {
             public void onSwiped(@NotNull final RecyclerView.ViewHolder viewHolder, int swipeDir) {
                 // Here is where you'll implement swipe to delete
                 AppExecutors.getInstance().diskIO().execute(new Runnable() {
+
                     @Override
                     public void run() {
-                        int position = viewHolder.getAdapterPosition();
-                        List<Contact> tasks = mAdapter.getTasks();
-                        mDb.contactsDao().deleteContact(tasks.get(position));
-                        retrieveTasks();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
 
+                                int position = viewHolder.getAdapterPosition();
+                                List<Contact> tasks = mAdapter.getTasks();
+                                mDb.contactsDao().deleteContact(tasks.get(position));
+                                retrieveTasks();
+                                Toast.makeText(ContactsActivity.this, "Contact removed!", Toast.LENGTH_LONG).show();
+
+                            }
+                        });
                     }
                 });
             }
@@ -146,15 +157,31 @@ public class ContactsActivity extends AppCompatActivity {
 
                     final String finalContactName = contactName;
                     final String finalPhoneNo = phoneNo;
-                    AppExecutors.getInstance().diskIO().execute(new Runnable() {
-                        @Override
-                        public void run() {
-                            Contact contact = new Contact(finalContactName, finalPhoneNo);
-                            mDb.contactsDao().insertContact(contact);
-                            retrieveTasks();
-                        }
-                    });
 
+                    final String currentTime = String.valueOf(Calendar.getInstance().getTime());
+
+                    final String number_of_calls = "0";
+
+                    AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                    @Override
+                      public void run() {
+                       runOnUiThread(new Runnable() {
+                        @Override
+                           public void run() {
+                            Cursor cursor = mDb.query(
+                          "SELECT phone_number FROM contacts where phone_number = " + "'" + finalPhoneNo + "'", null);
+                          if (cursor.getCount() > 0) {
+                           Toast.makeText(ContactsActivity.this, finalContactName + " already exists!.", Toast.LENGTH_LONG).show();
+                           } else {
+                          Contact contact = new Contact(finalContactName, finalPhoneNo, number_of_calls, currentTime);
+                        mDb.contactsDao().insertContact(contact);
+                        retrieveTasks();
+                  Toast.makeText(ContactsActivity.this, finalContactName + " successfully added!", Toast.LENGTH_LONG).show();
+                }
+            }
+          });
+        }
+            });
 
                     cursor.close();
                 } catch (Exception e) {
@@ -163,7 +190,7 @@ public class ContactsActivity extends AppCompatActivity {
             }
 
         } else {
-            Log.e("MainActivity", "Failed to pick contact");
+            Log.e("ContactsActivity", "Failed to pick contact");
         }
     }
 
@@ -174,9 +201,11 @@ public class ContactsActivity extends AppCompatActivity {
     }
 
     private void retrieveTasks() {
+
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
+
                 final List<Contact> contacts = mDb.contactsDao().getContactsList();
                 runOnUiThread(new Runnable() {
                     @Override
