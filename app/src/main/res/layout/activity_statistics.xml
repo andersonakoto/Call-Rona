@@ -10,32 +10,32 @@
         android:id="@+id/calls_in_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="121dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:text="###"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/calls_this_week"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="20dp"
         android:lines="2"
         android:text="C a l l s  i n \nt o t a l"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
@@ -54,14 +54,14 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="12dp"
         android:lines="2"
         android:text="C a l l s  t h i s \nw e e k"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/statistik_view"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/statistik_view" />
 
     <TextView
@@ -69,13 +69,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="###"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/statistik_view" />
 
@@ -85,15 +85,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="32dp"
-        android:text="Top 4 Calls"
+        android:text="Top 4 Calls This Week"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <ImageView
         android:id="@+id/imageView5"

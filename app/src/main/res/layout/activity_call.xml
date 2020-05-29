@@ -12,7 +12,7 @@
         android:id="@+id/roulette_img"
         android:layout_width="259dp"
         android:layout_height="208dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="184dp"
         android:src="@drawable/roullete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
